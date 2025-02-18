@@ -1,0 +1,23 @@
+@mixin status-dot($color) {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 10px;
+    left: 70%;
+    outline: 2px solid var(--background-color);
+    background-color: $color;
+}
+
+.online-status {
+    position: relative;
+
+    &__dot {
+        &--online {
+            @include status-dot(rgb(58, 255, 58));
+        }
+        &--offline {
+            @include status-dot(red);
+        }
+    }
+}

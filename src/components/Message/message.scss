@@ -1,0 +1,68 @@
+.message-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: var(--background-color);
+    border-left: solid var(--secondary-foreground-color) 1px;
+    border-right: solid var(--secondary-foreground-color) 1px;
+}
+
+.message-header {
+    display: flex;
+    padding: 1rem;
+    height: 7vh;
+    background-color: var(--background-color);
+    border-bottom: solid var(--secondary-foreground-color) 1px;
+    align-items: center;
+    gap: 10px;
+
+    &__channel-name {
+        font-weight: 500;
+        color: var(--primary-text-color);
+    }
+    &__channel-status {
+        font-size: 10pt;
+        &--online {
+            color: green;
+        }
+        &--offline {
+            color: red;
+        }
+    }
+}
+
+.message-content {
+    height: 86vh;
+    overflow-y: scroll;
+
+    .message-box {
+        display: flex;
+        font-size: 1.1rem;
+        margin: 0 auto 1rem;
+        padding: 0.5rem 1.5rem;
+        gap: 0.5rem;
+        flex-direction: column-reverse;
+        span {
+            color: var(--primary-text-color);
+        }
+    }
+}
+
+.message-bottom {
+    display: flex;
+    height: 7vh;
+    border-top: solid var(--secondary-foreground-color) 1px;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+
+    &__input-trailing-icon {
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+
+    &__emoji {
+        font-size: 20pt;
+        cursor: pointer;
+    }
+}

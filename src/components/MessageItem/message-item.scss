@@ -1,0 +1,206 @@
+.message-box {
+    .message-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &__bubble {
+            border-radius: 1.15rem;
+            line-height: 1.25;
+            max-width: 75%;
+            padding: 0.5rem 0.875rem;
+            position: relative;
+            word-wrap: break-word;
+            margin-bottom: 0;
+            color: var(--primary-text-color);
+
+            &::before,
+            &::after {
+                bottom: -0.1rem;
+                content: "";
+                height: 1rem;
+                position: absolute;
+            }
+        }
+
+        &__sent-time {
+            align-self: center;
+            font-size: 1rem;
+            font-weight: lighter;
+        }
+
+        &__edited {
+            font-size: small;
+            margin: 0;
+            padding: 0;
+        }
+
+        &__reaction {
+            display: inline-flex;
+            background-color: var(--foreground-color);
+            padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+            font-size: 0.8rem;
+            border-radius: 1rem;
+            border: solid var(--background-color) 2px;
+            margin-bottom: -10px;
+
+            &--has-owner {
+                color: var(--primary-color);
+            }
+        }
+
+        &__attachment {
+            max-width: 75%;
+            display: flex;
+            margin-top: 0.2rem;
+        }
+
+        .reply-message {
+            display: flex;
+            flex-direction: column;
+            opacity: 0.6;
+
+            &__text {
+                background-color: var(--foreground-color);
+                padding: 0.5rem 0.875rem;
+                border-radius: 1.15rem;
+                margin-bottom: 0;
+                margin-top: -8px;
+                transform: translateY(0.5rem);
+                color: var(--primary-text-color);
+                max-width: 75%;
+            }
+        }
+
+        &__delete {
+            background-color: var(--foreground-color);
+            padding: 0.5rem 0.875rem;
+            border-radius: 1.15rem;
+            color: red !important;
+        }
+
+        &:not(.message-item-wrapper > .message-item).message-item--left-side {
+            padding-left: 3.2rem;
+        }
+    }
+
+    .message-item-wrapper {
+        display: flex;
+        gap: 1rem;
+
+        &__avatar {
+            width: 35px;
+            height: 35px;
+            align-self: end;
+        }
+
+        &:has(.message-item__reaction) .message-item-wrapper__avatar {
+            transform: translateY(-1rem);
+        }
+    }
+}
+
+[class*="right-side"] {
+    .message-item {
+        &__bubble {
+            align-self: flex-end;
+            background-color: var(--primary-color);
+            color: #ffffff;
+
+            &::before {
+                border-bottom-left-radius: 0.8rem 0.7rem;
+                border-right: 1rem solid var(--primary-color);
+                right: -0.35rem;
+                transform: translate(0, -0.1rem);
+            }
+
+            &::after {
+                background-color: var(--background-color);
+                border-bottom-left-radius: 0.5rem;
+                right: -40px;
+                transform: translate(-30px, -2px);
+                width: 10px;
+            }
+        }
+
+        &__edited {
+            align-self: self-end;
+        }
+
+        &__reaction {
+            align-self: self-end;
+            transform: translate(-1rem, -0.5rem);
+        }
+
+        &__attachment {
+            align-self: self-end;
+            justify-content: end;
+        }
+
+        &__delete {
+            align-self: end;
+        }
+
+        &__emoji {
+            align-self: end;
+        }
+    }
+
+    .reply-message {
+        align-items: end;
+    }
+}
+
+[class*="left-side"] {
+    .message-item {
+        &__bubble {
+            align-self: flex-start;
+            background-color: var(--foreground-color);
+
+            &::before {
+                border-bottom-right-radius: 0.8rem 0.7rem;
+                border-left: 1rem solid var(--foreground-color);
+                left: -0.35rem;
+                transform: translate(0, -0.1rem);
+            }
+
+            &::after {
+                background-color: var(--background-color);
+                border-bottom-right-radius: 0.5rem;
+                left: 20px;
+                transform: translate(-30px, -2px);
+                width: 10px;
+            }
+        }
+
+        &__sent-time {
+            margin-left: -51px;
+        }
+
+        &__edited {
+            align-self: self-start;
+        }
+
+        &__reaction {
+            align-self: self-start;
+            transform: translate(1rem, -0.5rem);
+        }
+
+        &__attachment {
+            align-self: self-start;
+            justify-content: start;
+        }
+
+        &__delete {
+            align-self: start;
+        }
+
+        &__emoji {
+            align-self: start;
+        }
+    }
+
+    .reply-message {
+        align-items: start;
+    }
+}

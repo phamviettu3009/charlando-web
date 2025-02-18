@@ -1,0 +1,35 @@
+.menu {
+    width: 100%;
+
+    .menu-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 8px;
+        background-color: var(--foreground-color);
+        margin-bottom: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &__label {
+            font-size: 11pt;
+            color: var(--primary-text-color);
+        }
+
+        &:hover {
+            background-color: var(--primary-color);
+        }
+
+        &:hover .menu-item__label {
+            color: white;
+        }
+
+        &--active {
+            background-color: var(--primary-color) !important;
+        }
+
+        &--active .menu-item__label {
+            color: white;
+        }
+    }
+}

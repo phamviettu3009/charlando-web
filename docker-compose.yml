@@ -1,0 +1,14 @@
+version: "3"
+services:
+    react-app:
+        build: .
+        volumes:
+            - .:/app # Mount thư mục gốc của dự án vào /app trong container
+            - /app/node_modules # Đảm bảo node_modules trong container không bị ghi đè
+        container_name: fontend-charlando
+        ports:
+            - "5173:5173" # Map cổng 5173 từ container ra host
+        environment:
+            - CHOKIDAR_USEPOLLING=true # Tùy chọn để sử dụng polling cho hot-reload trong Docker
+        stdin_open: true
+        tty: true

@@ -1,0 +1,12 @@
+.contact {
+    background-color: var(--background-color);
+
+    &__friend {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 1rem;
+    }
+
+    @import "./Channel/channel.scss";
+}

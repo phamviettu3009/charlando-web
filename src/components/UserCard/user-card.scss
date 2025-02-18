@@ -1,0 +1,31 @@
+.user-card {
+    max-width: 500px;
+    position: relative;
+    cursor: pointer;
+
+    &__cover-photo {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    &-info {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        align-items: center;
+        background-color: rgba(48, 48, 48, 0.561);
+
+        &__name {
+            color: #ffffff;
+            font-size: medium;
+            margin-top: unset;
+            margin-bottom: unset;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

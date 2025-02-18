@@ -1,0 +1,48 @@
+.input-wrapper {
+    position: relative;
+    width: 100%;
+
+    &__leading {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__trailing {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .input {
+        background-color: var(--foreground-color);
+        border: none;
+        outline: none;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        box-shadow: none;
+        width: 100%;
+        color: var(--primary-text-color);
+
+        &--rounded {
+            border-radius: 8px;
+        }
+
+        &--rounded-full {
+            border-radius: 9999px;
+        }
+
+        &--line {
+            background-color: var(--background-color);
+        }
+    }
+
+    &__leading + .input {
+        padding-left: 3rem !important;
+    }
+
+    &__trailing + .input {
+        padding-right: 3rem !important;
+    }
+}
